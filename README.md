@@ -1,5 +1,9 @@
 # Simple and light http/https proxy
 
+Simple docker-compose http/https proxy
+
+Just set environment variables and run docker-compose up -d
+
 ## Environmets
 
 .env file contains required variable which are set in proxy command
