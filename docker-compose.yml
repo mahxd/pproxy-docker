@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+ proxy:
+  image: mosajjal/pproxy
+  restart: always
+  #ports: #use bind port if you don't need client ip to be logged
+  # - 44444:44444
+  # - 55555:55555
+  volumes:
+   - ./ssl:/ssl:ro
+  # http + https
+  #command: ["-v","--ssl","/ssl/crt.pem,/ssl/key.pem","-l","http+ssl://${ADDRESS}:${HTTPS_PORT}/${AUTH}","-l","http://${ADDRESS}:${HTTP_PORT}/${AUTH}"]
+  # only http
+  command: ["-v","-l","http://${ADDRESS}:${HTTP_PORT}/${AUTH}"] #http only
+  # only https
+  #command: ["-v","--ssl","/ssl/crt.pem,/ssl/key.pem","-l","http+ssl://${ADDRESS}:${HTTPS_PORT}/${AUTH}"] #https only
+  logging:
+      driver: "json-file"
+      options:
+        max-size: "1M"
+        max-file: "100"
+  deploy:
+   resources:
+    limits: 
+     cpus: "1"
+     memory: "500M"
+    reservations:
+     memory: "50M"
+  network_mode: host #For logging real client IPs

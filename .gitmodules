@@ -1,0 +1,6 @@
+[submodule "pproxy-docker"]
+	path = pproxy-docker
+	url = https://github.com/mosajjal/pproxy-docker
+[submodule "python-proxy"]
+	path = python-proxy
+	url = https://github.com/qwj/python-proxy
