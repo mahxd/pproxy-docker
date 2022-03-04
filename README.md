@@ -4,23 +4,23 @@
 
 .env file contains required variable which are set in proxy command
 
-###ADDRESS="0.0.0.0"  
+# ADDRESS="0.0.0.0"  
 
-###AUTH="#user:pass"
+# AUTH="#user:pass"
 
 You can change user and pass value (don't remove starting #)
 
 Or you can disable proxy authentication by commenting AUTH line in .env file
 
-### HTTP_PORT="55555"
+# HTTP_PORT="55555"
 
-### HTTPS_PORT="44444"
+# HTTPS_PORT="44444"
 
-### SSL_CERT="/ssl/crt.pem"
+# SSL_CERT="/ssl/crt.pem"
 
 Location of cert file
 
-### SSL_KEY="/ssl/key.pem"
+# SSL_KEY="/ssl/key.pem"
 
 Location of key file
 
@@ -52,9 +52,9 @@ Default i set to http only
 
 Just comment default and comment out the one that you want
 
-### only http proxy
+# only http proxy
 
-### http + https Proxy
+# http + https Proxy
 
-### only https proxy
+# only https proxy
 
